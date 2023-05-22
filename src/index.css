@@ -11,3 +11,255 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+*{
+  margin : 0;
+}
+/* navbar styles */
+.navbar{
+  width: 100%;
+  height: 12vh;
+  background-color:#a0a0f9;
+}
+.album-logo{
+  width: 55px;
+  height: 55px;
+  margin: 15px;
+  margin-left: 30px;
+  
+}
+.title-navbar{
+position: relative;
+bottom: 35px;
+font-weight: 800;
+font-size:x-large;
+}
+/* album */
+.album-form{
+  margin: auto;
+  margin-top:20px;
+  padding:20px;
+  width: 50vw; 
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  box-shadow: 0 2px 8px 0 rgba(99,99,99,.2);
+}
+.album-form h1{
+  font-weight: bolder;
+}
+.album-name{
+  border-style: none;
+  box-sizing: border-box;
+  padding: 15px;
+  width: 60%;
+  height: 6vh;
+  border-radius: 10px;
+  margin: 10px;
+}
+.album-clr-btn{
+  background-color: red;
+  height: 6vh;
+  padding: 5px;
+  color: white;
+  font-weight: bolder;
+  border-radius: 10px;
+  width: 15%;
+  border-style: none;
+  margin: 10px;
+}
+.album-crt-btn{
+  background-color:rgb(154, 154, 236);
+  height: 6vh;
+  width: 15%;
+  font-weight: bolder;
+  border-radius: 10px;
+  border-style: none;
+  color: white;
+}
+/* albums */
+.albums{
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+}
+.header-album{
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header-album h2{
+  font-weight: 1000;
+  font-size: xx-large;
+}
+.add-btn-album{
+  border: 2px solid #07f;
+  border-radius: 5px;
+  color: #07f;
+  background-color: rgba(0,119,255,.1);
+  font-weight: 700;
+  padding: 5px 10px;
+}
+.cnl-btn-album{
+  background-color: rgba(255,19,0,.1);
+  border: 2px solid #ff1300;
+  color: #ff1300;
+  border-radius: 5px;
+  font-weight:700;
+  padding: 5px 10px;
+}
+/* each album */
+.album-container{
+display: flex;
+flex-wrap: wrap;
+width: 100%;
+margin:40px;
+}
+.album-list{
+  width:180px;
+  height: 180px;
+  margin : 10px;
+  background-color:#eee;
+  border-radius: 10px 10px 0px 0px;
+}
+.each-album{
+ width: 160px;
+ height: 140px;
+ margin: auto;
+ margin-top: 10px;
+ border-radius: 10px;
+ background-color:white;
+}
+.album-icon{
+  position: relative;
+  left: 50px ;
+  top: 40px;
+  width: 60px;
+  height: 60px;
+}
+.album-list:hover{
+  background-color: #07f;
+}
+.album-title{
+  position: relative;
+  top:55%;
+  text-align: center;
+}
+/* photos form */
+.photos-form{
+  margin: auto;
+  margin-top:20px;
+  padding:20px;
+  width: 50vw; 
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  box-shadow: 0 2px 8px 0 rgba(99,99,99,.2);
+}
+.photos-form h2{
+  font-weight: 1000;
+  font-size: xx-large;
+}
+.photos-input{
+  display: flex;
+  flex-direction: column;
+}
+.photos-title-url{
+height: 5vh;
+margin: 10px;
+box-sizing: border-box;
+border-style: none;
+border-radius: 25px;
+padding: 10px;
+}
+.photos-clr-btn{
+  background-color: red;
+  height: 6vh;
+  padding: 5px;
+  color: white;
+  font-weight: bolder;
+  border-radius: 10px;
+  width: 15%;
+  border-style: none;
+  margin: 10px;
+}
+.photos-add-btn{
+  background-color:rgb(154, 154, 236);
+  height: 6vh;
+  width: 15%;
+  font-weight: bolder;
+  border-radius: 10px;
+  border-style: none;
+  color: white;
+}
+.photos-btn{
+  text-align: center;
+}
+/* photos */
+.photos{
+  width: 80%;
+  margin: auto;
+  margin-top: 50px;
+}
+.header-photo{
+ display: flex; 
+  flex-direction: row;
+  justify-content: space-between; 
+}
+.header-photos-left{
+ display: flex;
+
+}
+.photos-back-btn{
+  width: 30px;
+  /* height: 30px; */
+}
+.photos-back-div{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 25px;
+  border-style: none;
+  background-color: rgb(185, 199, 199);
+  box-shadow: 0 5px 5px 0 black;
+}
+.add-btn-photos{
+  border: 2px solid #07f;
+  border-radius: 5px;
+  color: #07f;
+  background-color: rgba(0,119,255,.1);
+  font-weight: 700;
+  padding: 5px 10px;
+  height: 40px;
+  position: relative;
+  top:15px;
+}
+.cnl-btn-photos{
+  background-color: rgba(255,19,0,.1);
+  border: 2px solid #ff1300;
+  color: #ff1300;
+  border-radius: 5px;
+  font-weight:700;
+  padding: 5px 10px;
+  height: 40px;
+}
+/* each photo */
+.photo-conatainer{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 40px;
+}
+.photo-list{
+  box-sizing: border-box;
+  width : 35%;
+  margin : 0% 5% 5% 5%;
+  height: 20vh;
+  border-radius: 10px 10px 0px 0px;
+  overflow: hidden;
+  border:5px solid #eee;
+  border-top: 35px solid #eee;
+}
+.photo-title{
+  position: relative;
+  right: 38%;
+  font-size: larger;
+  font-weight: 600;
+}
