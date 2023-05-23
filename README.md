@@ -1,3 +1,7 @@
+Photofolio is a React project designed to help you organize and store your photo albums in the cloud. With Photofolio, you can easily create albums and upload images to them, providing an easy way to manage your photo collection. All of your albums and images are stored in Firebase Cloud Firestore, ensuring that your data is always secure and accessible from anywhere. Whether you're a professional photographer or just someone who enjoys taking pictures, Photofolio is the perfect tool for managing your photos and keeping them organized.
+Here is a live link for your refernce : https://photofolio-zee.netlify.app/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
