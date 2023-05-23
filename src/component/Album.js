@@ -30,9 +30,9 @@ export default function Album({props,setPhotoId,setAlbumName}){
 
 
    function handlePhotos(id,name){
-    props("true");
+    props(true);
       setPhotoId({id : id});
-      setAlbumName(name);
+      setAlbumName({name : name});
       console.log(name);
   }
     return (

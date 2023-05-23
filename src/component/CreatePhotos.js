@@ -1,6 +1,9 @@
 import { db } from '../FirebaseInit';
 import { useState, useRef } from 'react';
 import { collection, doc, setDoc } from 'firebase/firestore';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function CreatePhotos(path) {
   
   const name = useRef();
@@ -13,6 +16,16 @@ export default function CreatePhotos(path) {
       title : formData.title,
       url : formData.url
     });
+    toast.success('Added Image to Album!', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
     setFormData({title : "",url: ""});
   }
 

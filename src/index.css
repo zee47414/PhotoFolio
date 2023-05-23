@@ -242,24 +242,84 @@ padding: 10px;
 }
 /* each photo */
 .photo-conatainer{
-  display: flex;
-  flex-wrap: wrap;
+  display:flex;
+  flex-wrap:wrap;
   width: 100%;
   margin-top: 40px;
+  box-sizing: border-box;
+  justify-content:flex-start;
+  /* justify-items: flex-start; */
 }
 .photo-list{
-  box-sizing: border-box;
-  width : 35%;
-  margin : 0% 5% 5% 5%;
+  width : 40%;
   height: 20vh;
   border-radius: 10px 10px 0px 0px;
   overflow: hidden;
   border:5px solid #eee;
   border-top: 35px solid #eee;
+  box-shadow: 5px 5px 5px 5px #2f2f3b;
+  margin-bottom:5%;
+  
 }
+
 .photo-title{
   position: relative;
-  right: 38%;
+  right: 40%;
   font-size: larger;
   font-weight: 600;
 }
+/* delete button */
+.delete-container{
+  display: flex;
+  flex-wrap: wrap;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.delete-img{
+  width: 20px;
+  height: 20px;
+  position: relative;
+  right: 110%;
+}
+/* full image  */
+.fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+}
+
+.fullscreen-photo {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  width: 30px;
+  height: 30px;
+  color: white;
+  cursor: pointer;
+  background-color: #cfcccc;
+  border-radius: 50%;
+  text-align: center;
+  align-items: center;
+  box-shadow: 0 2px 0 2px #565454 ;
+}
+.close-button:hover{
+  background-color: #ff1300;
+}
+
+
+
+
