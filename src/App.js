@@ -18,7 +18,7 @@ function App() {
   const [albumName , setAlbumName] = useState({name : ""});
   const query = collection(db, "albums");
   const [docs,loader,error] = useCollectionData(query);
-  // Rest of your code...
+
 
   return (
     <div className="App">
