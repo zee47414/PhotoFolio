@@ -7,10 +7,6 @@ import {collection,doc,onSnapshot} from "firebase/firestore";
 export default function Album({props,setPhotoId,setAlbumName}){
     const [albums,setAlbums] = useState([]);
     const [form,setForm] = useState('add');
-    albums.map((album)=>{
-      console.log(album.name);
-    })
-
 
     useEffect(()=>{
         onSnapshot(collection(db,"albums"),(snapShot)=>{
@@ -20,24 +16,18 @@ export default function Album({props,setPhotoId,setAlbumName}){
                             ...doc.data()
                         }
                     })
-              
-                    
-                    setAlbums(albums);
-                 
+         setAlbums(albums);
         })
 },[])
-
-
-
-   function handlePhotos(id,name){
+function handlePhotos(id,name){
     props(true);
       setPhotoId({id : id});
       setAlbumName({name : name});
       console.log(name);
   }
-    return (
+
+return (
         <>
-        
          {form === 'add' ? "" : <CreateAlbum />}
         <div className="albums">
           <div className="header-album">
