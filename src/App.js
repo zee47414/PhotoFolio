@@ -16,9 +16,6 @@ function App() {
   const [visible, setVisible] = useState(false);
   const [photoId, setPhotoId] = useState({ id: "" });
   const [albumName , setAlbumName] = useState({name : ""});
-  const query = collection(db, "albums");
-  const [docs,loader,error] = useCollectionData(query);
-
 
   return (
     <div className="App">
