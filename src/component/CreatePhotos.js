@@ -1,20 +1,32 @@
-import { db } from '../FirebaseInit';
+import { db , storage} from '../FirebaseInit';
 import { useState, useRef } from 'react';
-import { collection, doc, setDoc } from 'firebase/firestore';
-import { ToastContainer, toast } from 'react-toastify';
+import {  doc, setDoc } from 'firebase/firestore';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { getDownloadURL, ref ,uploadBytes } from 'firebase/storage';
 
 export default function CreatePhotos(path) {
   
   const name = useRef();
-  const [formData, setFormData] = useState({ title: "", url: "" });
+  const [formData, setFormData] = useState({ title: "", file: null });
   
   async function handleSubmit(e) {
     e.preventDefault();
+
+    // upload file to firebase Storage
+    const storageRef = await ref(storage,`${name.current.value}`);
+  
+    uploadBytes(storageRef, formData.file).then((snapshot) => {
+      console.log('Uploaded a blob or file!');
+    });
+
+  //  get the download url of the upload file
+  const downloadUrl = await getDownloadURL(storageRef);
+  console.log(downloadUrl);
     const docRef = doc(db,`albums/${path.path}/photos`,name.current.value);
     await setDoc(docRef,{
       title : formData.title,
-      url : formData.url
+      url : downloadUrl, //use the download URL as the file URL
     });
     toast.success('Added Image to Album!', {
       position: "top-right",
@@ -26,11 +38,15 @@ export default function CreatePhotos(path) {
       progress: undefined,
       theme: "light",
       });
-    setFormData({title : "",url: ""});
+    setFormData({title : "",file: null}); //reset the form data 
   }
 
   function handleClear() {
-    setFormData({ title: "", url: "" });
+    setFormData({ title: "", file: null }); //reset the form data
+  }
+  function handleFileChange(e){
+    const file = e.target.files[0];
+    setFormData({...formData,file}); //update the file state 
   }
 
   return (
@@ -48,11 +64,11 @@ export default function CreatePhotos(path) {
             required
           />
           <input
-            type='text'
-            placeholder='Image URL'
-            onChange={(e) => setFormData({ ...formData, url: e.target.value })}
+            type='file'
+            accept='image/*'
+            placeholder='Image'
+            onChange={handleFileChange} //handle file change event
             className='photos-title-url'
-            value={formData.url}
             required
           />
         </div>
